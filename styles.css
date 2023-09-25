@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 240px; /* Adjust the container width as needed */
+}
+
+.progress {
+    --r1: 154%;
+    --r2: 68.5%;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    border-radius: 50%;
+    background:
+        radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #4CAF50 80%), /* Changed color to green */
+        radial-gradient(var(--r1) var(--r2) at bottom, #4CAF50 79.5%, #0000 80%), /* Changed color to green */
+        radial-gradient(var(--r1) var(--r2) at top, #0000 79.5%, #4CAF50 80%), /* Changed color to green */
+        #ccc;
+    background-size: 50.5% 220%;
+    background-position: -100% 0%, 0% 0%, 100% 0%;
+    background-repeat: no-repeat;
+    animation: animate 2s infinite linear;
+}
+
+@keyframes animate {
+    33% {
+        background-position: 0% 33%, 100% 33%, 200% 33%;
+    }
+    66% {
+        background-position: -100% 66%, 0% 66%, 100% 66%;
+    }
+    100% {
+        background-position: 0% 100%, 100% 100%, 200% 100%;
+    }
+}
